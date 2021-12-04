@@ -18,14 +18,13 @@ class TrasactionList extends StatelessWidget {
               children: [
                 Text(
                   'Transactions is not added yet!',
-                  style: TextStyle(fontSize: 30),
+                  style: TextStyle(fontSize: 20),
                 ),
-                Icon(
-                  Icons.paid,
-                  size: 250,
-                  color: Colors.purple,
+                SizedBox(
+                  height: 30,
                 ),
                 Container(
+                  height: 300,
                   child: Image.asset(
                     'assets/images/cat.png',
                     scale: 1,
@@ -53,18 +52,24 @@ class TrasactionList extends StatelessWidget {
                         ),
                         child: Text(
                           ' \$${transactions[index].amount.toStringAsFixed(2)}',
-                          style: Theme.of(context).textTheme.caption,
+                          style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                          ),
                         ),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(transactions[index].title,
-                              style: TextStyle(
-                                fontFamily: 'Quicksand',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 36,
-                              )),
+                          Text(
+                            transactions[index].title,
+                            style: TextStyle(
+                              fontFamily: 'Quicksand',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
                           Text(
                             DateFormat.yMMMEd()
                                 .format(transactions[index].date),
